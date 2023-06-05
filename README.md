@@ -1,3 +1,4 @@
+`Disclaimer!`: *This project is just a prototype, do not fill in your correct card details for any reason.*
 # Frontend Mentor - Interactive card details form
 
 ![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)
