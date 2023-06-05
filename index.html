@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section>
+      <section id="bgMain">
+        <div>
+          <img src="images/card-logo.svg" alt="">
+          <p id="cardNum">0000 0000 0000 0000</p>
+          <p id="cardName">Jane Appleseed</p>
+          <p id="cardExpDate">00/00</p>
+        </div>
+        <div id="cardCVC">
+          000
+        </div>
+      </section>
+      <form>
+        <label for="cardHolder">Cardholder Name</label>
+        <input id="cardHolder" type="text" placeholder="e.g. Jane Appleseed" />
+
+        <label for="cardNumber">Card Number</label>
+        <input id="cardNumber" type="text" placeholder="e.g. 1234 5678 9123 0000" />
+
+        <div>
+          <label for="expiryYear">Exp. Date (MM/YY)</label>
+          <input id="expiryMonth" type="number" placeholder="MM" />
+          <input id="expiryYear" type="number" placeholder="YY" />
+        </div>
+        <div>
+          <label for="cvc">CVC</label>
+          <input id="cvc" type="number" placeholder="e.g. 123" />
+        </div>
+
+        <button type="submit" >Confirm</button>
+      </form>
+    </section>
+
+
+    <!-- Completed state start -->
+    <section id="completeMessage">
+      <img src="images/icon-complete.svg" alt="">
+      <h1>Thank you!</h1>
+      <p>We've added your card details</p>
+      <button id="clearButton">Continue</button>
+    </section>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" rel="nofollow" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="abdullahmuslim.github.io/portfolio">Abdullah Muslim</a>.
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
