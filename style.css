@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
 body {
-/*   opacity: .5;
+  /* opacity: .5;
   background-image: url(design/mobile-design.jpg); */
   font-family: 'Space Grotesk', sans-serif;
   /* width: 375px;
@@ -21,19 +21,19 @@ main {
   width: 100%;
 }
 
-#bgMain {
+.bgMain {
   background-image: url(images/bg-main-mobile.png);
   height: 241px;
   width: 100vw;
 }
-#bgMain div {
+.bgMain div {
   color: hsl(0, 0%, 100%);
   box-sizing: border-box;
   width: 286px;
   height: 158px;
   border-radius: 6px;
 }
-#bgMain div:first-child {
+.bgMain div:first-child {
   z-index: 2;
   position: absolute;
   top: 125px;
@@ -45,11 +45,11 @@ main {
   background-image: url(images/bg-card-front.png);
   padding: 6px 22px 22px 20px;
 }
-#bgMain div img {
+.bgMain div img {
   width: 52px;
   margin-bottom: 22px;
 }
-#bgMain div:first-child p {
+.bgMain div:first-child p {
   font-size: 10.5px;
   font-weight: 500;
 }
@@ -62,10 +62,10 @@ main {
   letter-spacing: .5px;
   margin-left: auto;
 }
-#bgMain div:first-child p:nth-child(3), label{
+.bgMain div:first-child p:nth-child(3), label{
   text-transform: uppercase;
 }
-#bgMain div:nth-child(2) {
+.bgMain div:nth-child(2) {
   z-index: 1;
   position: absolute;
   font-size: 12px;
@@ -76,8 +76,6 @@ main {
   justify-content: flex-end;
   padding-top: 4px;
   padding-right: 38px;
-}
-section div:nth-child(2) {
   background-image: url(images/bg-card-back.png);
 }
 
@@ -88,6 +86,10 @@ form {
   padding-bottom: 44px;
   margin-top: 90px;
   margin-inline: auto;
+}
+form div {
+  position: relative;
+  width: 100%;
 }
 label {
   display: block;
@@ -122,22 +124,29 @@ input:focus::before {
   z-index: -1;
   background-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
 }
-form div {
+.shortInput {
   display: flex;
   flex-flow: row wrap;
   width: 50%;
 }
-form div label {
+.shortInput label {
   width: 100%;
 }
-form div input {
+.shortInput input {
   height: 46px;
   width: 44%;
   margin-right: 5%;
 }
-form div:nth-last-child(2) input{
+.shortInput:nth-last-child(2) input{
   width: 100%;
   margin-right: 0;
+}
+.error {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: hsl(0, 100%, 66%);
+  font-size: 9px;
 }
 button {
   color: hsl(0, 0%, 100%);
@@ -187,4 +196,15 @@ color: hsl(228, 45%, 44%);
   font-weight: 500;
   font-display: swap;
   src: url(spaceGrotesk.woff2);
+}
+@media only screen and (min-width: 1003px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .7;
+    background-image: url(design/desktop-design.jpg);
+    width: 1440px;
+    height: 900px;
+  }
 }

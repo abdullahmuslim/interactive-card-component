@@ -14,7 +14,7 @@
 <body>
   <main>
     <section>
-      <section id="bgMain">
+      <section class="bgMain">
         <div>
           <img src="images/card-logo.svg" alt="">
           <p id="cardNum">0000 0000 0000 0000</p>
@@ -26,20 +26,26 @@
         </div>
       </section>
       <form>
-        <label for="cardHolder">Cardholder Name</label>
-        <input id="cardHolder" type="text" placeholder="e.g. Jane Appleseed" />
-
-        <label for="cardNumber">Card Number</label>
-        <input id="cardNumber" type="text" placeholder="e.g. 1234 5678 9123 0000" />
-
         <div>
-          <label for="expiryYear">Exp. Date (MM/YY)</label>
-          <input id="expiryMonth" type="number" placeholder="MM" />
-          <input id="expiryYear" type="number" placeholder="YY" />
+          <label for="cardHolder">Cardholder Name</label>
+          <input id="cardHolder" type="text" placeholder="e.g. Jane Appleseed" />
+          <p class="error"></p>
         </div>
         <div>
+          <label for="cardNumber">Card Number</label>
+          <input id="cardNumber" type="text" placeholder="e.g. 1234 5678 9123 0000" />
+          <p class="error"></p>
+        </div>
+        <div class="shortInput">
+          <label for="expiryYear">Exp. Date (MM/YY)</label>
+          <input id="expiryMonth" type="text" placeholder="MM" />
+          <input id="expiryYear" type="text" placeholder="YY" />
+          <p class="error"></p>
+        </div>
+        <div class="shortInput">
           <label for="cvc">CVC</label>
-          <input id="cvc" type="number" placeholder="e.g. 123" />
+          <input id="cvc" type="text" placeholder="e.g. 123" />
+          <p class="error"></p>
         </div>
 
         <button type="submit" >Confirm</button>

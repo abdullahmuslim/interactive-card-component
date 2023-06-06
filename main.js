@@ -3,24 +3,15 @@ const cardName = document.querySelector("#cardName");
 const cardExpDate = document.querySelector("#cardExpDate");
 const cardCVC = document.querySelector("#cardCVC");
 
-
-const cardHolder = document.getElementById("cardHolder");
-cardHolder.addEventListener("input", updateValue);
-
-const cardNumber = document.getElementById("cardNumber");
-cardNumber.addEventListener("input", updateValue);
-
-const expiryMonth = document.getElementById("expiryMonth");
-expiryMonth.addEventListener("input", updateValue);
-
-const expiryYear = document.getElementById("expiryYear");
-expiryYear.addEventListener("input", updateValue);
-
-const cvc = document.getElementById("cvc");
-cvc.addEventListener("input", updateValue);
+const inputs = [...document.querySelectorAll("input")];
+inputs.map(input => {
+  input.addEventListener("input", updateValue);
+  input.addEventListener("input", clearWarning);
+})
 
 const form = document.querySelector("form");
 form.addEventListener("submit", validate);
+
 
 const completeMessage = document.getElementById("completeMessage");
 
@@ -92,19 +83,83 @@ function updateValue(e){
 
 function validate(e){
   e.preventDefault();
-  switch ("") {
-    case "":
-      
-      break;
-    default:
-
+  let testPassed = true;
+  for (let input of inputs) {
+    if (input.value === ""){
+     setWarning(input, "Can't be blank");
+     testPassed = false;
+     continue;
+    }
+    
+    switch (input.id) {
+      case "cardHolder":
+        let name = input.value.replace(/ +/g, "");
+        if(name.match(/[^a-zA-Z]/g)){
+          setWarning(input, "Wrong format, letters only");
+          testPassed = false;
+        }
+        break;
+      case "cardNumber":
+        let cardNum = input.value.replace(/ +/g, "");
+        if(cardNum.match(/[^0-9]/g)){
+          setWarning(input, "Wrong format, numbers only");
+          testPassed = false;
+        }else if(cardNum.length < 16){
+          setWarning(input, "Incomplete card number");
+          testPassed = false;
+        }
+        break;
+      case "expiryMonth":
+        let month = input.value.replace(/ +/g, "");
+        if (month.match(/[^0-9]/g)){
+          setWarning(input, "Wrong format, numbers only");
+          testPassed = false;
+        }else if(parseInt(month) === 0 || parseInt(month) > 12){
+          setWarning(input, "Must be a valid date");
+          testPassed = false;
+        }
+        break;
+      case "expiryYear":
+        let year = input.value.replace(/ +/g, "");
+        if (year.match(/[^0-9]/g)) {
+          setWarning(input, "Wrong format, numbers only")
+          testPassed = false;
+        }else if(parseInt(year) === 0){
+          setWarning(input, "Must be a valid date");
+          testPassed = false;
+        }
+        break;
+      case "cvc":
+        let cvc = input.value.replace(/ +/g, "");
+        if(cvc.match(/[^0-9]/g)){
+          setWarning(input, "Wrong format, numbers only");
+          testPassed = false;
+        }
+        break;
+    }
   }
-  form.style.display = "none";
-  completeMessage.style.display = "unset";
+  if (testPassed){
+    form.style.display = "none";
+    completeMessage.style.display = "unset";
+  }
 }
 
 function clearData(){
   form.reset();
   form.style.display = "flex";
   completeMessage.style.display = "none";
+  cardNum.textContent = "0000 0000 0000 0000";
+  cardName.textContent = "Jane Appleseed";
+  cardExpDate.textContent = "00/00";
+  cardCVC.textContent = "000";
+  
+}
+
+function setWarning(input, message){
+  const parent = input.parentElement;
+  parent.lastElementChild.textContent = message;
+}
+function clearWarning(e){
+  const parent = e.currentTarget.parentElement;
+  parent.lastElementChild.textContent = "";
 }
