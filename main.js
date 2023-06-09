@@ -68,7 +68,7 @@ function updateValue(e){
       expiryYear.value = expiryYear.value.substr(0, 2);
       break;
     case 'cvc':
-      let cvcNum = cvc.value.substr(0, 2);
+      let cvcNum = cvc.value.substr(0, 3);
       cvcNum = cvcNum.replace(/ +/g, "");
       cvcDiff = 3 - cvcNum.length;
       for (let i = 0; i < cvcDiff; i++) {
@@ -90,7 +90,7 @@ function validate(e){
      testPassed = false;
      continue;
     }
-    
+
     switch (input.id) {
       case "cardHolder":
         let name = input.value.replace(/ +/g, "");
@@ -152,7 +152,7 @@ function clearData(){
   cardName.textContent = "Jane Appleseed";
   cardExpDate.textContent = "00/00";
   cardCVC.textContent = "000";
-  
+
 }
 
 function setWarning(input, message){
