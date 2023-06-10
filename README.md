@@ -16,6 +16,8 @@ This is a solution to the [Interactive card details form challenge on Frontend M
 - [Author](#author)
 
 ## Overview
+This is a responsive and interactive card detail form prototype.
+<p style="color: hsl(0, 100%, 66%);">warning: Do not fill in your credit card info !</p>
 
 ### The challenge
 
@@ -29,11 +31,11 @@ Users should be able to:
 - See hover, active, and focus states for interactive elements on the page
 
 ### Screenshot
-
+![](./screenshot.png)
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution URL](https://github.com/abdullahmuslim/interactive-card-component)
+- Live Site URL: [live site](https://abdullahmuslim.github.io/interactive-card-component)
 
 ## My process
 
