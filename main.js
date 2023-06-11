@@ -22,7 +22,6 @@ function updateValue(e){
   switch (e.currentTarget.id) {
     case "cardHolder":
       cardName.textContent = cardHolder.value;
-      cardHolder.value = cardHolder.value.toUpperCase();
       break;
     case "cardNumber":
       let num = cardNumber.value;
@@ -158,6 +157,7 @@ function clearData(){
 function setWarning(input, message){
   const parent = input.parentElement;
   parent.lastElementChild.textContent = message;
+  input.style.borderColor = "hsl(0, 100%, 66%)";
 }
 function clearWarning(e){
   const parent = e.currentTarget.parentElement;

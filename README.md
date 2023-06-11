@@ -11,13 +11,13 @@ This is a solution to the [Interactive card details form challenge on Frontend M
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+  - [Useful resource](#useful-resource)
 - [Author](#author)
 
 ## Overview
 This is a responsive and interactive card detail form prototype.
-<p style="color: hsl(0, 100%, 66%);">warning: Do not fill in your credit card info !</p>
+
+`#warning: Do not fill in your credit card info !`
 
 ### The challenge
 
@@ -38,7 +38,9 @@ Users should be able to:
 - Live Site URL: [live site](https://abdullahmuslim.github.io/interactive-card-component)
 
 ## My process
-
+The design for the [mobile](design/mobile-design.jpg) and [desktop](design/desktop-design.jpg) have a lot in common.
+It can be broken into two parts, the card and the form. This is the point where a shift is make depending on the screen resolution.
+I have to update the card with the detail user inputs in the form simultaneously while keeping in mind to replace empty position on some display with zero.
 ### Built with
 
 - Semantic HTML5 markup
@@ -48,13 +50,10 @@ Users should be able to:
 - Mobile-first workflow
 
 ### What I learned
+I learn to add gradient color to border using `border-image` 
 
-### Continued development
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+### Useful resource
+[Video on border image](https://youtu.be/SmR6-R01nOs)
 
 ## Author
 

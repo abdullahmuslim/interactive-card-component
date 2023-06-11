@@ -91,6 +91,7 @@ form div {
   width: 100%;
 }
 label {
+  color: hsl(278, 68%, 11%);
   display: block;
   font-size: 13px;
   letter-spacing: .5px;
@@ -99,6 +100,7 @@ label {
   margin-bottom: 8px;
 }
 input {
+  color: hsl(278, 68%, 11%);
   position: relative;
   width: 99.9%;
   height: 44px;
@@ -107,22 +109,24 @@ input {
   letter-spacing: 1.2px;
   word-spacing: 1.5px;
   margin-bottom: 19px;
-  border-width: 1px;
+  border: 1px solid hsl(270, 3%, 87%);
   border-radius: 5px;
   padding-left: 17px;
 }
 input:focus {
+  border: 1px solid transparent;
+  border-image: conic-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  border-image-slice: 1;
   outline: none;
-  border: 2px solid transparent;
 }
-input:focus::before {
+/* input::before {
+  z-index: -1;
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
-}
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+} */
 .shortInput {
   display: flex;
   flex-flow: row wrap;
